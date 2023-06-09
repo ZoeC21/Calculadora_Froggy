@@ -42,11 +42,6 @@ body {
   background-size: cover;
 }
 
-html {
-  height: 100%;
-  width: 100%;
-}
-
 button {
   border: none;
   padding: 0.5em;
@@ -58,6 +53,10 @@ button:focus {
   outline: solid var(--l-green) 2px;
   transform: scale(0.95);
   font-weight: 600;
+}
+
+a {
+  color: var(--d-green);
 }
 
 .title {
@@ -89,7 +88,25 @@ button:focus {
   color: var(--white);
   text-align: right;
   font-size: 1.875em;
-  margin-bottom: 30px;
+  /* Firefox scrollbar */
+  overflow-x: auto;
+  scrollbar-color: var(--l-pink) var(--l-green);
+}
+
+/* Chrome scrollbar */
+::-webkit-scrollbar {
+  height: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--l-green);
+  margin-block: 0.25em;
+  border-radius: 0 0 12px 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--l-pink);
+  border-radius: 0 0 12px 12px;
 }
 
 .calc-bottom {
@@ -97,7 +114,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .calc-bottom--row {
@@ -110,25 +127,25 @@ button:focus {
   column-gap: 22px;
 }
 
-.calc-bottom--norm,
-.calc-bottom--long {
+.btn-square,
+.btn-rectangle {
   transition: all .1s ease-in-out;
   background-color: var(--white);
   border-bottom: 4px solid var(--s-cream);
 }
 
-.calc-bottom--norm {
+.btn-square {
   width: 64px;
   height: 64px;
   font-size: 1.25em;
 }
 
-.calc-bottom--norm:hover {
+.btn-square:hover {
   background-color: var(--l-green);
   border-bottom: 4px solid var(--l-green);
 }
 
-.calc-bottom--long {
+.btn-rectangle {
   width: 50%;
 }
 
@@ -156,11 +173,17 @@ button:focus {
   padding: 0.9em;
 }
 
-.clear {
+.clear-text {
   text-transform: uppercase;
   color: var(--white);
   font-weight: 800;
   font-size: 1.25em;
+}
+
+.credits {
+  text-align: center;
+  margin: 30px 0;
+  color: var(--d-green);
 }
 
 .hidden {
