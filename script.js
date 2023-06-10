@@ -32,7 +32,10 @@ buttons.forEach(button => {
     }
 
     if (button.id === "backspace") {
-      if (display.textContent.length === 1 || display.textContent === "Error!" || display.textContent === "NaN" || display.textContent === "Infinity") {
+      if (display.textContent.length === 1 
+        || display.textContent === "Error!" 
+        || display.textContent === "NaN" 
+        || display.textContent === "Infinity") {
         display.textContent = "0";
       } else {
         display.textContent = display.textContent.slice(0, -1);
@@ -55,7 +58,10 @@ buttons.forEach(button => {
       return;
     }
 
-    if (display.textContent === "0" || display.textContent === "Error!" || display.textContent === "NaN" || display.textContent === "Infinity") {
+    if (display.textContent === "0" 
+    || display.textContent === "Error!" 
+    || display.textContent === "NaN" 
+    || display.textContent === "Infinity") {
       display.textContent = btnPressed;
     } else {
       display.textContent += btnPressed;
